@@ -1,0 +1,13 @@
+{
+  "name":"react-fire-heroku",
+  "description": "react-fire-heroku built with generator-react-firebase",
+  "repository": "https://github.com/halol/react-fire-heroku",
+  "keywords": [
+    "generator-react-firebase",
+    "react",
+    "redux",
+    "firebase",
+    "redux-firebase",
+    "react-redux-firebase",
+  ]
+}

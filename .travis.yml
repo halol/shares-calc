@@ -1,0 +1,42 @@
+dist: trusty
+
+sudo: false
+
+language: node_js
+
+node_js:
+ - 6.11.1 
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
+
+branches:
+  only:
+    - master
+    - stage
+    - prod
+
+cache:
+  bundler: true
+  directories:
+    - node_modules # NPM packages
+
+
+script:
+  - npm run create-config
+  - npm run lint
+  - npm run test
+  - npm run build
+
+addons:
+  code_climate:
+    repo_token: $CODE_CLIMATE
+
+deploy:
+  skip_cleanup: true
+  provider: heroku
+  api_key:
+    secure: $HEROKU_KEY
+  app: $HEROKU_APP
